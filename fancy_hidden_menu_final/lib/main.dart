@@ -1,0 +1,22 @@
+import 'package:fancy_hidden_menu/core/viewmodels/home_model.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'ui/views/home_view.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => HomeModel(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomeView(),
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+      ),
+    );
+  }
+}
